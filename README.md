@@ -116,6 +116,4 @@ Top-level fields (`description`, `detailedDescription`, `features`) are hand-aut
 
 ## Current prompts
 
-| Feature | Use Case | Languages | Environment |
-|---|---|---|---|
-| quickstart | build-movie-search-app | Python, TypeScript, Go, Java, C# | cloud |
+See [`index.json`](index.json) for the full listing of available prompts, languages, and metadata.
