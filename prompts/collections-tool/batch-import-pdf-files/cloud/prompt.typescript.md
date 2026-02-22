@@ -51,12 +51,12 @@ Create:
   - Add appropriate descriptions for each property
 
 ### CLI requirements (commander):
-- --path \<paths...\>: one or more inputs; each can be a PDF file path or a directory
+- --path: one or more inputs; each can be a PDF file path or a directory
 - --no-recursive: default recursive is true; when a directory is given, search for PDFs recursively; use --no-recursive to disable
-- --glob \<pattern\>: optional; override the default search pattern (default "**/*.pdf" when recursive else "*.pdf")
-- --collection-name \<name\>: **COLLECTION_NAME** from env or "Documents"
-- --vector-name \<name\>: optional; default "page"
-- --format \<format\>: optional; one of png/jpg; default png
+- --glob: optional; override the default search pattern (default "**/*.pdf" when recursive else "*.pdf")
+- --collection-name: **COLLECTION_NAME** from env or "Documents"
+- --vector-name: optional; default "page"
+- --format: optional; one of png/jpg; default png
 - --delete-and-recreate: optional flag; if set, delete the collection if it exists and recreate it
 - --dry-run: optional flag; discover files and count pages without writing to Weaviate
 
