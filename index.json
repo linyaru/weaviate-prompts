@@ -103,6 +103,119 @@
           "clientApi": "Weaviate TypeScript client v3"
         }
       }
+    },
+    "collections-tool-pdf": {
+      "id": "batch-import-pdf-files",
+      "description": "Batch import PDF files into Weaviate Cloud using multi-vector embeddings (ColPali-style), converting each page to a base64-encoded image.",
+      "detailedDescription": "The prompt will guide you to create a script that recursively discovers PDF files, renders each page as a base64 image, and imports them into Weaviate Cloud as separate objects with page number, document title, and source file metadata. Uses multi2vec-weaviate with the ColModernVBERT model for multi-vector encoding.",
+      "features": [
+        "Convert each PDF page to a base64-encoded image",
+        "Store pages as separate objects with page_number, document_title, and source_file metadata",
+        "Recursive directory scanning with customizable glob patterns",
+        "Dry-run mode to preview files and page counts without writing to Weaviate",
+        "Delete-and-recreate option for idempotent re-imports",
+        "Batch import with error handling — skips failed pages rather than aborting"
+      ],
+      "languages": {
+        "python": {
+          "path": "prompts/collections-tool/batch-import-pdf-files/cloud/prompt.python.md",
+          "title": "Batch Import PDFs into Weaviate Cloud",
+          "framework": "CLI (argparse)",
+          "environment": "cloud",
+          "sections": [
+            "Connection",
+            "PDF Rendering",
+            "Collection Configuration",
+            "Batch Import"
+          ],
+          "packages": [
+            "weaviate-client>=4.19.0",
+            "PyMuPDF",
+            "python-dotenv"
+          ],
+          "clientApi": "Weaviate Python client v4"
+        },
+        "typescript": {
+          "path": "prompts/collections-tool/batch-import-pdf-files/cloud/prompt.typescript.md",
+          "title": "Batch Import PDFs into Weaviate Cloud",
+          "framework": "CLI (commander)",
+          "environment": "cloud",
+          "sections": [
+            "Connection",
+            "PDF Rendering",
+            "Collection Configuration",
+            "Batch Import"
+          ],
+          "packages": [
+            "weaviate-client@^3.11.0",
+            "mupdf",
+            "commander",
+            "dotenv",
+            "glob",
+            "tsx"
+          ],
+          "clientApi": "Weaviate TypeScript client v3"
+        }
+      }
+    },
+    "collections-tool-tabular": {
+      "id": "batch-import-tabular-files",
+      "description": "Batch import CSV and Excel (.xlsx) files into Weaviate Cloud with automatic schema detection, type coercion, and text2vec-weaviate embeddings.",
+      "detailedDescription": "The prompt will guide you to create a script that discovers CSV and Excel files, auto-detects column types (INT, NUMBER, BOOLEAN, TEXT), sanitizes property names, validates that all files share the same headers, and batch imports rows into a Weaviate Cloud collection using the Snowflake Arctic Embed model.",
+      "features": [
+        "Support both CSV (RFC 4180) and Excel (.xlsx) file formats",
+        "Auto-detect column types: INT, NUMBER, BOOLEAN, TEXT",
+        "Sanitize headers into valid Weaviate property names",
+        "Validate all files share the same column headers before import",
+        "Coerce cell values to detected types; skip empty cells",
+        "Recursive directory scanning with customizable glob patterns",
+        "Dry-run mode to preview schema without writing to Weaviate",
+        "Batch import (size 100) with per-batch error reporting"
+      ],
+      "languages": {
+        "python": {
+          "path": "prompts/collections-tool/batch-import-tabular-files/cloud/prompt.python.md",
+          "title": "Batch Import CSV/Excel into Weaviate Cloud",
+          "framework": "CLI (argparse)",
+          "environment": "cloud",
+          "sections": [
+            "Connection",
+            "File Parsing",
+            "Schema Detection",
+            "Collection Configuration",
+            "Batch Import"
+          ],
+          "packages": [
+            "weaviate-client>=4.19.0",
+            "openpyxl",
+            "python-dotenv"
+          ],
+          "clientApi": "Weaviate Python client v4"
+        },
+        "typescript": {
+          "path": "prompts/collections-tool/batch-import-tabular-files/cloud/prompt.typescript.md",
+          "title": "Batch Import CSV/Excel into Weaviate Cloud",
+          "framework": "CLI (commander)",
+          "environment": "cloud",
+          "sections": [
+            "Connection",
+            "File Parsing",
+            "Schema Detection",
+            "Collection Configuration",
+            "Batch Import"
+          ],
+          "packages": [
+            "weaviate-client@^3.11.0",
+            "csv-parse",
+            "xlsx",
+            "commander",
+            "dotenv",
+            "glob",
+            "tsx"
+          ],
+          "clientApi": "Weaviate TypeScript client v3"
+        }
+      }
     }
   }
 }
