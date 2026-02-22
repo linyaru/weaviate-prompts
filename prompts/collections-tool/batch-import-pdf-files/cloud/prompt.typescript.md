@@ -39,7 +39,7 @@ Create:
 
 ### Collection configuration:
 - Name: **COLLECTION_NAME**
-- Vectorizer: multi2vec-weaviate (use `configure.multiVectors.multi2VecWeaviate()` syntax)
+- Vectorizer: multi2vec-weaviate
 - imageField: "page_image"
 - Model: ModernVBERT/colmodernvbert
 - Multi-vector encoding: MUVERA (use `configure.vectorIndex.multiVector.encoding.muvera()`)
@@ -49,6 +49,8 @@ Create:
   - Store each PDF page as a separate object
   - Include the document title and source filename as text properties for filtering
   - Add appropriate descriptions for each property
+ 
+After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code. 
 
 ### CLI requirements (commander):
 - --path: one or more inputs; each can be a PDF file path or a directory
