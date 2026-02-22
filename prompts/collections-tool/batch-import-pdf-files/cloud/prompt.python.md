@@ -70,6 +70,7 @@ Create:
 - Skip pages that fail conversion rather than aborting the entire import`
 
 ### Output
+- After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code.
 - Provide the full Python file, with helpful comments where applicable
 - The file should be ready to run as: `python import.py --path ./pdfs`
 - The package dependencies should be ready to install as: `pip install -r requirements.txt`
