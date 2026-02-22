@@ -49,8 +49,6 @@ Create:
   - Store each PDF page as a separate object
   - Include the document title and source filename as text properties for filtering
   - Add appropriate descriptions for each property
- 
-After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code. 
 
 ### CLI requirements (commander):
 - --path: one or more inputs; each can be a PDF file path or a directory
@@ -75,6 +73,7 @@ After installing dependencies, inspect the `weaviate-client` package for the cor
 - Skip pages that fail conversion rather than aborting the entire import
 
 ### Output
+- After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code.
 - Provide the full TypeScript file, with helpful comments where applicable
 - The file should be ready to run as: `npx tsx import.ts --path ./pdfs`
 - The package dependencies should be ready to install as: `npm install`
