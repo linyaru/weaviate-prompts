@@ -78,7 +78,7 @@ Headers may contain spaces or special characters. Replace any character that is 
 - Skip rows that fail coercion rather than aborting the entire import
 
 ### Output
-- After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code
+- After installing dependencies, inspect the `weaviate-client` package (see docs at https://docs.weaviate.io/weaviate/client-libraries/python) for the correct collection creation API before writing code
 - Provide the full Python file, with helpful comments where applicable
 - The file should be ready to run as: `python csv_import.py --path ./data`
 - The package dependencies should be ready to install as: `pip install -r requirements.txt`
