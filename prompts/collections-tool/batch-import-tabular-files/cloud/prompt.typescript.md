@@ -80,7 +80,7 @@ Headers may contain spaces or special characters. Replace any character that is 
 - Skip rows that fail coercion rather than aborting the entire import
 
 ### Output
-- After installing dependencies, inspect the `weaviate-client` package for the correct collection creation API before writing code
+- After installing dependencies, inspect the `weaviate-client` package (see docs at https://docs.weaviate.io/weaviate/client-libraries/typescript) for the correct collection creation API before writing code
 - Provide the full TypeScript file, with helpful comments where applicable
 - The file should be ready to run as: `npx tsx csv_import.ts --path ./data`
 - The package dependencies should be ready to install as: `npm install`
